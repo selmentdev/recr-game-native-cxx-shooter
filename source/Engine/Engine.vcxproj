@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{29FF6FFC-950C-4DC8-935D-8D78625219D8}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Engine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.14393.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\PhysX.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="..\PhysX.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)build\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)intermediate\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)build\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)intermediate\$(ProjectName)-$(Configuration)-$(Platform)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>$(SolutionDir)source\Engine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <AdditionalIncludeDirectories>$(SolutionDir)source\Engine\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>/std:c++latest %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeaderFile />
+      <PrecompiledHeaderOutputFile />
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Core.Diagnostics\Debug.hxx" />
+    <ClInclude Include="include\Core.Diagnostics\Trace.hxx" />
+    <ClInclude Include="include\Core.Rendering\MaterialRenderer.hxx" />
+    <ClInclude Include="include\Core.Rendering\Sampler.hxx" />
+    <ClInclude Include="include\Core.Rendering\Texture2D.hxx" />
+    <ClInclude Include="include\Core.World\Camera.hxx" />
+    <ClInclude Include="include\Core.World\Common.hxx" />
+    <ClInclude Include="include\Core.Rendering\MeshRenderer.hxx" />
+    <ClInclude Include="include\Core.World\GameObject.hxx" />
+    <ClInclude Include="include\Core.World\Physics.hxx" />
+    <ClInclude Include="include\Core.Rendering\CommandList.hxx" />
+    <ClInclude Include="include\Core.Rendering\Common.hxx" />
+    <ClInclude Include="include\Core.Rendering\GraphicsPipelineState.hxx" />
+    <ClInclude Include="include\Core.Rendering\Query.hxx" />
+    <ClInclude Include="include\Core.Rendering\RenderSystem.hxx" />
+    <ClInclude Include="include\Core.Rendering\Resource.hxx" />
+    <ClInclude Include="include\Core.Rendering\Buffers.hxx" />
+    <ClInclude Include="include\Core.Rendering\Viewport.hxx" />
+    <ClInclude Include="include\Core.World\Scene.hxx" />
+    <ClInclude Include="include\Core\Common.hxx" />
+    <ClInclude Include="include\Core\CoreApplication.hxx" />
+    <ClInclude Include="include\Core\CoreEventHandler.hxx" />
+    <ClInclude Include="include\Core\CoreWindow.hxx" />
+    <ClInclude Include="include\Core\Environment.hxx" />
+    <ClInclude Include="include\Core\FileSystem.hxx" />
+    <ClInclude Include="include\Core\Object.hxx" />
+    <ClInclude Include="include\Core\Reference.hxx" />
+    <ClInclude Include="include\Core\StringFormat.hxx" />
+    <ClInclude Include="include\Core\StringHash.hxx" />
+    <ClInclude Include="include\Core\Timer.hxx" />
+    <ClInclude Include="source\Core.Rendering\DDSTextureLoader.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\Core.Diagnostics\Debug.cxx" />
+    <ClCompile Include="source\Core.Diagnostics\Trace.cxx" />
+    <ClCompile Include="source\Core.Rendering\CommandList.cxx" />
+    <ClCompile Include="source\Core.Rendering\DDSTextureLoader.cxx" />
+    <ClCompile Include="source\Core.Rendering\MaterialRenderer.cxx" />
+    <ClCompile Include="source\Core.Rendering\MeshRenderer.cxx" />
+    <ClCompile Include="source\Core.Rendering\Sampler.cxx" />
+    <ClCompile Include="source\Core.Rendering\Texture2D.cxx" />
+    <ClCompile Include="source\Core.Rendering\UniformBuffer.cxx" />
+    <ClCompile Include="source\Core.Rendering\GraphicsPipelineState.cxx" />
+    <ClCompile Include="source\Core.Rendering\IndexBuffer.cxx" />
+    <ClCompile Include="source\Core.Rendering\OcclusionQuery.cxx" />
+    <ClCompile Include="source\Core.Rendering\RenderSystem.cxx" />
+    <ClCompile Include="source\Core.Rendering\Resource.cxx" />
+    <ClCompile Include="source\Core.Rendering\VertexBuffer.cxx" />
+    <ClCompile Include="source\Core.Rendering\Viewport.cxx" />
+    <ClCompile Include="source\Core.World\Camera.cxx" />
+    <ClCompile Include="source\Core.World\GameObject.cxx" />
+    <ClCompile Include="source\Core.World\Physics.cxx" />
+    <ClCompile Include="source\Core.World\Scene.cxx" />
+    <ClCompile Include="source\Core\CoreApplication.cxx" />
+    <ClCompile Include="source\Core\CoreEventHandler.cxx" />
+    <ClCompile Include="source\Core\CoreWindow.cxx" />
+    <ClCompile Include="source\Core\Environment.cxx" />
+    <ClCompile Include="source\Core\FileSystem.cxx" />
+    <ClCompile Include="source\Core\StringFormat.cxx" />
+    <ClCompile Include="source\Core\Timer.cxx" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

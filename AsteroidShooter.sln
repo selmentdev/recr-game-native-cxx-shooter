@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AsteroidShooter", "source\AsteroidShooter\AsteroidShooter.vcxproj", "{96DE00E8-5669-4555-96FB-AB24562BD4CA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Engine", "source\Engine\Engine.vcxproj", "{29FF6FFC-950C-4DC8-935D-8D78625219D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96DE00E8-5669-4555-96FB-AB24562BD4CA}.Debug|x64.ActiveCfg = Debug|x64
+		{96DE00E8-5669-4555-96FB-AB24562BD4CA}.Debug|x64.Build.0 = Debug|x64
+		{96DE00E8-5669-4555-96FB-AB24562BD4CA}.Release|x64.ActiveCfg = Release|x64
+		{96DE00E8-5669-4555-96FB-AB24562BD4CA}.Release|x64.Build.0 = Release|x64
+		{29FF6FFC-950C-4DC8-935D-8D78625219D8}.Debug|x64.ActiveCfg = Debug|x64
+		{29FF6FFC-950C-4DC8-935D-8D78625219D8}.Debug|x64.Build.0 = Debug|x64
+		{29FF6FFC-950C-4DC8-935D-8D78625219D8}.Release|x64.ActiveCfg = Release|x64
+		{29FF6FFC-950C-4DC8-935D-8D78625219D8}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
